@@ -7,6 +7,7 @@ import com.rdv.rdv.dto.MedecinDto;
 import com.rdv.rdv.dto.PatientDto;
 import com.rdv.rdv.model.Consultation;
 import com.rdv.rdv.model.Rdv;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class RdvServiceImpl implements RdvService{
 
     @Autowired
@@ -22,9 +24,9 @@ public class RdvServiceImpl implements RdvService{
     @Autowired
     private ConsultationService consultationService;
 
-    private MedecinApiClient medecinApiClient;
+    private final MedecinApiClient medecinApiClient;
 
-    private PatientApiClient patientApiClient;
+    private final PatientApiClient patientApiClient;
 
     @Override
     public List<Rdv> findAll() {
