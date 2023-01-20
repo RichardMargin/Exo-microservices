@@ -1,6 +1,7 @@
 package com.rdv.rdv.controller;
 
 import com.rdv.rdv.dto.MedecinRdvsDto;
+import com.rdv.rdv.dto.PatientRdvsDto;
 import com.rdv.rdv.model.Rdv;
 import com.rdv.rdv.service.RdvService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,16 @@ public class RdvController {
     @GetMapping("/medecin-info/{id}")
     public ResponseEntity<MedecinRdvsDto> findAllRdvsByIdMedecin(@PathVariable Long id) {
         MedecinRdvsDto result  = rdvService.findAllRdvsByIdMedecin(id);
+
+        if (result != null) {
+            return new ResponseEntity<>(result, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @GetMapping("/patient-info/{id}")
+    public ResponseEntity<PatientRdvsDto> findAllRdvsByIdPatient(@PathVariable Long id) {
+        PatientRdvsDto result  = rdvService.findAllRdvsByIdPatient(id);
 
         if (result != null) {
             return new ResponseEntity<>(result, HttpStatus.OK);

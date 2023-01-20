@@ -6,6 +6,7 @@ import com.rdv.rdv.dao.RdvDAO;
 import com.rdv.rdv.dto.MedecinDto;
 import com.rdv.rdv.dto.MedecinRdvsDto;
 import com.rdv.rdv.dto.PatientDto;
+import com.rdv.rdv.dto.PatientRdvsDto;
 import com.rdv.rdv.model.Consultation;
 import com.rdv.rdv.model.Rdv;
 import lombok.RequiredArgsConstructor;
@@ -64,10 +65,30 @@ public class RdvServiceImpl implements RdvService{
         if(medecin != null){
             List<Rdv> allRdvs = findAll();
             var rdvList = allRdvs.stream().filter(rdv -> rdv.getMedecinId() == idMedecin).collect(Collectors.toList());
-            result.setId(medecin.getId());
+            result.setId(idMedecin);
             result.setNom(medecin.getNom());
             result.setPrenom(medecin.getPrenom());
             result.setSpecialite(medecin.getSpecialite());
+            result.setRdvList(rdvList);
+
+        }
+        return result;
+    }
+
+    @Override
+    public PatientRdvsDto findAllRdvsByIdPatient(Long idPatient) {
+        PatientDto patient = patientApiClient.findById(idPatient);
+
+
+        PatientRdvsDto result = new PatientRdvsDto();
+        if(patient != null){
+            List<Rdv> allRdvs = findAll();
+            var rdvList = allRdvs.stream().filter(rdv -> rdv.getPatientId() == idPatient).collect(Collectors.toList());
+            result.setId(idPatient);
+            result.setNom(patient.getNom());
+            result.setPrenom(patient.getPrenom());
+            result.setTelephone(patient.getTelephone());
+            result.setDateDeNaissance(patient.getDateDeNaissance());
             result.setRdvList(rdvList);
 
         }

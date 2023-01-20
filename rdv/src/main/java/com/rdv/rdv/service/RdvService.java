@@ -1,6 +1,7 @@
 package com.rdv.rdv.service;
 
 import com.rdv.rdv.dto.MedecinRdvsDto;
+import com.rdv.rdv.dto.PatientRdvsDto;
 import com.rdv.rdv.model.Rdv;
 
 import java.util.List;
@@ -18,4 +19,6 @@ public interface RdvService {
     void deleteAll();
 
     MedecinRdvsDto findAllRdvsByIdMedecin(Long idMedecin);
+
+    PatientRdvsDto findAllRdvsByIdPatient(Long idPatient);
 }
