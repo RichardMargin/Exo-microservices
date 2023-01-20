@@ -2,6 +2,7 @@ package com.rdv.rdv.controller;
 
 import com.rdv.rdv.dto.MedecinRdvsDto;
 import com.rdv.rdv.dto.PatientRdvsDto;
+import com.rdv.rdv.dto.RdvDto;
 import com.rdv.rdv.model.Rdv;
 import com.rdv.rdv.service.RdvService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,8 @@ public class RdvController {
     private RdvService rdvService;
 
     @GetMapping("/")
-    public ResponseEntity<List<Rdv>> findAll() {
-        List<Rdv> rdvs = rdvService.findAll();
+    public ResponseEntity<List<RdvDto>> findAll() {
+        List<RdvDto> rdvs = rdvService.findAll();
         if (rdvs != null && !rdvs.isEmpty()) {
             return new ResponseEntity<>(rdvs, HttpStatus.OK);
         }
@@ -51,8 +52,8 @@ public class RdvController {
 
 
     @GetMapping("/{id}")
-    public ResponseEntity<Rdv> findById(@PathVariable Long id) {
-        Optional<Rdv> rdv = rdvService.findById(id);
+    public ResponseEntity<RdvDto> findById(@PathVariable Long id) {
+        Optional<RdvDto> rdv = rdvService.findById(id);
         if (rdv.isPresent()) {
             return new ResponseEntity<>(rdv.get(), HttpStatus.OK);
         }
@@ -80,7 +81,7 @@ public class RdvController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Rdv> deleteById(@PathVariable Long id) {
         rdvService.deleteById(id);
-        Optional<Rdv> rdv = rdvService.findById(id);
+        Optional<RdvDto> rdv = rdvService.findById(id);
         if (!rdv.isPresent()) {
             return new ResponseEntity<>(null, HttpStatus.OK);
         }
@@ -90,7 +91,7 @@ public class RdvController {
     @DeleteMapping("/")
     public ResponseEntity<Rdv> deleteAll() {
         rdvService.deleteAll();
-        List<Rdv> rdvs = rdvService.findAll();
+        List<RdvDto> rdvs = rdvService.findAll();
         if (rdvs == null || rdvs.isEmpty()) {
             return new ResponseEntity<>(null, HttpStatus.OK);
         }

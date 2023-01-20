@@ -11,7 +11,7 @@ import lombok.ToString;
 @Data
 public class MedecinDto {
 
-
+    @Id
     private Long id;
 
     private String nom;

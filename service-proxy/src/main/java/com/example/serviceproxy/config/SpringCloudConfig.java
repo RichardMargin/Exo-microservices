@@ -21,6 +21,9 @@ public class SpringCloudConfig {
                 .route(r -> r.path("/rdvs/**")
                         .uri("lb://rdv")
                 )
+                .route(r -> r.path("/consultations/**")
+                        .uri("lb://rdv")
+                )
                 .build();
 
         /*return builder.routes()
