@@ -25,11 +25,6 @@ public class SpringCloudConfig {
                         .uri("lb://rdv")
                 )
                 .build();
-
-        /*return builder.routes()
-                .route(r -> r.path("/employee/**")
-                        .uri("lb://")
-                        .id("employeeModule"))
-                .build();*/
+        
     }
 }
