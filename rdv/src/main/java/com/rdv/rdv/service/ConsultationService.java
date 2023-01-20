@@ -1,5 +1,6 @@
 package com.rdv.rdv.service;
 
+import com.rdv.rdv.dto.MedecinDto;
 import com.rdv.rdv.model.Consultation;
 
 import java.util.List;
@@ -15,4 +16,5 @@ public interface ConsultationService {
     void deleteById(Long id);
 
     void deleteAll();
+
 }

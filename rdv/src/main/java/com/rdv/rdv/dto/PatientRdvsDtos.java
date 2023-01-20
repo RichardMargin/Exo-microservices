@@ -1,15 +1,13 @@
 package com.rdv.rdv.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.rdv.rdv.model.Rdv;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
-public class PatientDto {
+public class PatientRdvsDtos {
 
 
     private Long id;
@@ -17,5 +15,5 @@ public class PatientDto {
     private String prenom;
     private Date dateDeNaissance;
     private String telephone;
-
+    private List<Rdv> rdvList;
 }
