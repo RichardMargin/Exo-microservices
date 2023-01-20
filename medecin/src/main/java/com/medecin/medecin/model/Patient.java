@@ -7,7 +7,6 @@ import jakarta.persistence.Id;
 
 import java.util.Date;
 
-@Entity
 public class Patient {
 
     @Id
@@ -18,7 +17,6 @@ public class Patient {
     private String nom;
     private String prenom;
     private Date dateDeNaissance;
-    private String telephone;
 
 
 
@@ -58,11 +56,4 @@ public class Patient {
         this.dateDeNaissance = dateDeNaissance;
     }
 
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
 }

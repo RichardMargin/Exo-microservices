@@ -40,9 +40,4 @@ public class PatientController {
         return params;
     }
 
-    @GetMapping("/patients")
-    public List<Patient> getAll() {
-        return patientService.getAll();
-    }
-
 }
