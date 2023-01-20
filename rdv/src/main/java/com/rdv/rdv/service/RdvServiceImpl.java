@@ -38,6 +38,7 @@ public class RdvServiceImpl implements RdvService{
 
     @Override
     public Rdv save(Rdv rdv, Long idPatient, Long idMedecin) {
+        System.out.println("je suis là");
         PatientDto patient = patientApiClient.findById(idPatient);
         MedecinDto medecin = medecinApiClient.findById(idMedecin);
         if (medecin != null && patient != null) {

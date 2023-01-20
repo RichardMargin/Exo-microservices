@@ -1,5 +1,6 @@
 package com.example.serviceproxy.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
@@ -16,6 +17,9 @@ public class SpringCloudConfig {
                 )
                 .route(r -> r.path("/medecins/**")
                         .uri("lb://medecin")
+                )
+                .route(r -> r.path("/rdvs/**")
+                        .uri("lb://rdv")
                 )
                 .build();
 
