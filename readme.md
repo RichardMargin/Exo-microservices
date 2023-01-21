@@ -1,6 +1,6 @@
 ### Installation
 
-1. Version Java utilisée: 17
+1. Version Java utilisée: 19
 
 2. faire un clone du repertoire du projet:
 
