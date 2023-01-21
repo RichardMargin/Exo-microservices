@@ -16,6 +16,7 @@ Ensuite nous avons l'appli service-eureka, qui est notre service discovery et pe
 Nous avons également un service-proxy, sur le port 9999, qui permet de pouvoir rediriger chaque microservice sur le même port, afin de faciliter les requêtes de CRUD.
 Et nous avons 3 micro services, un nommé medecin, sur le port 9091, un nommé patient sur le port 9092, un nommé rdv sur le port 9093.
 
+Il faut patienter quelques secondes après avoir lancé les 6 applis, que tout se mette en place, avant de pouvoir tester les urls via le proxy.
 
 4. Pour ce projet, nous utilisons 3 bases de données PostgreSQL sur le port 5432, une pour nos 3 microservices, il y a patient_db qui gère les patients, medecin_db qui gère les médecins, et rdv_db qui gère les rdvs et les consultations.
 
