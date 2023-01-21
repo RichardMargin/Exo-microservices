@@ -72,9 +72,11 @@ public class RdvServiceImpl implements RdvService{
             result.setConsultation(rdv.get().getConsultation());
             result.setMedecin(medecin);
             result.setPatient(patient);
-        }
+            return Optional.of(result);
 
-        return Optional.of(result);
+        }
+        return Optional.empty();
+
     }
 
     @Override
