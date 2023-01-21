@@ -17,4 +17,5 @@ public class PatientRdvsDto {
     private Date dateDeNaissance;
     private String telephone;
     private List<Rdv> rdvList;
+
 }

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(value = "MEDECIN", url = "http://localhost:9091")
 public interface MedecinApiClient {
-
     @GetMapping(value = "/medecins/{id}")
     MedecinDto findById(@PathVariable("id") Long id);
+
 }

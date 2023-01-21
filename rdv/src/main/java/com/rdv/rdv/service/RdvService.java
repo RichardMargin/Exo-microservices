@@ -23,5 +23,4 @@ public interface RdvService {
 
     PatientRdvsDto findAllRdvsByIdPatient(Long idPatient);
 
-
 }

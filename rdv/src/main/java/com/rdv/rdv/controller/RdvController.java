@@ -29,7 +29,6 @@ public class RdvController {
         return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
     }
 
-
     @GetMapping("/medecin-info/{id}")
     public ResponseEntity<MedecinRdvsDto> findAllRdvsByIdMedecin(@PathVariable Long id) {
         MedecinRdvsDto result  = rdvService.findAllRdvsByIdMedecin(id);
@@ -49,7 +48,6 @@ public class RdvController {
         }
         return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
     }
-
 
     @GetMapping("/{id}")
     public ResponseEntity<RdvDto> findById(@PathVariable Long id) {

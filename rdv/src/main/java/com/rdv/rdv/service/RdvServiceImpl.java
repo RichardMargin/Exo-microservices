@@ -10,8 +10,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.swing.text.html.Option;
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -26,9 +24,7 @@ public class RdvServiceImpl implements RdvService{
 
     @Autowired
     private ConsultationService consultationService;
-
     private final MedecinApiClient medecinApiClient;
-
     private final PatientApiClient patientApiClient;
 
     @Override
@@ -53,13 +49,10 @@ public class RdvServiceImpl implements RdvService{
         });
 
         return result;
-
     }
-
 
     private List<Rdv> findAllRdv() {
         return rdvRepository.findAll();
-
     }
 
     @Override
@@ -103,7 +96,6 @@ public class RdvServiceImpl implements RdvService{
     public MedecinRdvsDto findAllRdvsByIdMedecin(Long idMedecin) {
         MedecinDto medecin = medecinApiClient.findById(idMedecin);
 
-
         MedecinRdvsDto result = new MedecinRdvsDto();
         if(medecin != null){
             List<Rdv> allRdvs = findAllRdv();
@@ -121,7 +113,6 @@ public class RdvServiceImpl implements RdvService{
     @Override
     public PatientRdvsDto findAllRdvsByIdPatient(Long idPatient) {
         PatientDto patient = patientApiClient.findById(idPatient);
-
 
         PatientRdvsDto result = new PatientRdvsDto();
         if(patient != null){
@@ -147,4 +138,5 @@ public class RdvServiceImpl implements RdvService{
     public void deleteAll() {
         rdvRepository.deleteAll();
     }
+
 }

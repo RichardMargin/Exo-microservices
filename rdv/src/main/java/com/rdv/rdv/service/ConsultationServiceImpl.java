@@ -38,4 +38,5 @@ public class ConsultationServiceImpl implements ConsultationService{
     public void deleteAll() {
         consultationRepository.deleteAll();
     }
+
 }
