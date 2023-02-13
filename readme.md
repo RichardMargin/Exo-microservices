@@ -34,7 +34,7 @@ En plus des crud classiques pour médecin et patient, utilisant le RestRessource
 
 11. Membres du groupe:
 
-- Sarah ROUINI.
+- Sarah ROUINI. TEST
 - Walid REHIOUI.
 - Mohamed DESOKI.
 - Richard MANGIN.
